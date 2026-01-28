@@ -1,14 +1,5 @@
 {
-  "version": 2,
-  "name": "otero-portfolio",
-  "builds": [
-    { "src": "**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/portfolio.html", "dest": "/portfolio.html" },
-    { "src": "/biography.html", "dest": "/biography.html" },
-    { "src": "/STYLE.CSS", "dest": "/STYLE.CSS" },
-    { "src": "/bootstrap-5.0.2-dist/(.*)", "dest": "/bootstrap-5.0.2-dist/$1" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/portfolio.html" }
   ]
 }
-
