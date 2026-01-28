@@ -1,5 +1,8 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/portfolio.html" }
+  "version": 2,
+  "name": "otero-portfolio",
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "STYLE.CSS", "use": "@vercel/static" }
   ]
 }
