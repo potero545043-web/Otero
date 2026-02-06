@@ -1,53 +1,720 @@
-
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pretty Mae D. Otero | IT Student</title>
-    <link rel="stylesheet" href="STYLE.CSS">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretty Mae - Biography</title>
 
-</head>
-<body>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-    <div class="header-box">
-        <h1>PRETTY MAE D. OTERO</h1>
-        <p>Information Technology Student</p>
-    </div>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <div class="profile-section">
-        <img src="MIMI.jpg" alt="Pretty Mae Otero" class="profile-img">
-        
-    </div>
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-    <div class="content">
-        <p>Hello! My name is <b class="highlight">Pretty Mae D. Otero</b>.</p>
+    <style>
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);
+        color: #fff5e1;
+      }
 
-        <p>I am a passionate IT student interested in programming, system creation, and web development.</p>
+      /* HEADER */
+      .bio-header {
+        background: linear-gradient(135deg, #ff1b9d 0%, #ff4b9e 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(255, 27, 157, 0.3);
+        margin-bottom: 60px;
+      }
 
-        <p>I love learning new technologies and building simple projects using <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and other tools.</p>
-    </div>
+      .bio-header h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
 
-    <div class="info-box">
-        <div class="column">
-            <h3>Education</h3>
-            <ul>
-                <li>Bachelor of Science in Information Technology</li>
-                <li>University of Mindanao</li>
-                <li>Expected Graduation: 2029</li>
-            </ul>
+      .bio-header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        margin: 0;
+      }
+
+      /* HERO SECTION */
+      .hero-bio {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+
+      .bio-image {
+        flex: 0 0 300px;
+        text-align: center;
+      }
+
+      .bio-image img {
+        width: 100%;
+        max-width: 280px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(255, 27, 157, 0.4);
+        border: 5px solid #ffd700;
+        animation: fadeInLeft 0.8s ease-out;
+      }
+
+      .bio-text {
+        flex: 1;
+        min-width: 300px;
+        animation: fadeInRight 0.8s ease-out;
+      }
+
+      .bio-text h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #ffd700;
+        margin-bottom: 20px;
+      }
+
+      .bio-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #fff5e1;
+        margin-bottom: 20px;
+      }
+
+      .highlight-text {
+        color: #ff1b9d;
+        font-weight: 800;
+      }
+
+      /* SECTION STYLING */
+      .bio-section {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);
+        margin-bottom: 0;
+      }
+
+      .bio-section:nth-child(even) {
+        background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
+      }
+
+      .bio-section h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #ffd700;
+        margin-bottom: 50px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .bio-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff1b9d 0%, #ffd700 100%);
+        border-radius: 2px;
+      }
+
+      /* EDUCATION CARDS */
+      .education-card {
+        background: rgba(255, 27, 157, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(255, 27, 157, 0.2);
+        border-left: 5px solid #ff1b9d;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .education-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(255, 27, 157, 0.3);
+        border-left-color: #ffd700;
+      }
+
+      .education-card h4 {
+        color: #ffd700;
+        font-weight: 800;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        letter-spacing: -0.3px;
+      }
+
+      .education-card .subtitle {
+        color: #fff5e1;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .education-card p {
+        color: #fff5e1;
+        margin: 8px 0;
+        line-height: 1.6;
+      }
+
+      .education-icon {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #ff1b9d 0%, #ffd700 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+
+      /* HOBBIES GRID */
+      .hobbies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 0;
+      }
+
+      .hobby-card {
+        background: rgba(255, 27, 157, 0.1);
+        padding: 40px 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(255, 27, 157, 0.2);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out;
+        border: 1px solid rgba(255, 27, 157, 0.3);
+      }
+
+      .hobby-card:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 25px 50px rgba(255, 27, 157, 0.4);
+      }
+
+      .hobby-icon {
+        font-size: 3.5rem;
+        color: #ffd700;
+        margin-bottom: 20px;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .hobby-card:hover .hobby-icon {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      .hobby-card h4 {
+        color: #fff5e1;
+        font-weight: 800;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        letter-spacing: -0.3px;
+      }
+
+      .hobby-card p {
+        color: #fff5e1;
+        line-height: 1.6;
+      }
+
+      /* GOALS SECTION */
+      .goals-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .goal-item {
+        background: rgba(255, 27, 157, 0.1);
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        border-left: 5px solid #ff1b9d;
+        box-shadow: 0 10px 30px rgba(255, 27, 157, 0.2);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .goal-item:hover {
+        transform: translateX(10px);
+        border-left-color: #ffd700;
+      }
+
+      .goal-item h4 {
+        color: #ffd700;
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: -0.3px;
+      }
+
+      .goal-item p {
+        color: #fff5e1;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* TIMELINE */
+      .timeline {
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #ff1b9d 0%, #ffd700 100%);
+        border-radius: 2px;
+      }
+
+      .timeline-item {
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        margin-right: auto;
+        width: 48%;
+        text-align: right;
+        padding-right: 50px;
+      }
+
+      .timeline-item:nth-child(even) {
+        margin-left: auto;
+        margin-right: 0;
+        width: 48%;
+        text-align: left;
+        padding-left: 50px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #1a0f2e;
+        border: 4px solid #ffd700;
+        border-radius: 50%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+
+      .timeline-content {
+        background: rgba(255, 27, 157, 0.1);
+        padding: 25px;
+        border-radius: 15px;
+        border-left: 4px solid #ff1b9d;
+        box-shadow: 0 10px 30px rgba(255, 27, 157, 0.2);
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .timeline-content h4 {
+        color: #ffd700;
+        font-weight: 800;
+        margin-bottom: 5px;
+        letter-spacing: -0.3px;
+      }
+
+      .timeline-content .year {
+        color: #ffd700;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .timeline-content p {
+        color: #fff5e1;
+        margin: 10px 0 0 0;
+        line-height: 1.6;
+      }
+
+      /* FOOTER */
+      .bio-footer {
+        padding: 60px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);
+        color: white;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 15px 40px;
+        background: linear-gradient(135deg, #ffd700 0%, #ffc700 100%);
+        color: #1a0f2e;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 800;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        font-size: 1.1rem;
+      }
+
+      .back-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        background: #ffc700;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .bio-header h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content {
+          gap: 30px;
+        }
+
+        .bio-text h2 {
+          font-size: 1.8rem;
+        }
+
+        .timeline {
+          padding-left: 0;
+        }
+
+        .timeline::before {
+          left: 0;
+        }
+
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+          width: 100%;
+          text-align: left;
+          padding-left: 50px;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        .timeline-dot {
+          left: 0;
+        }
+
+        .bio-section {
+          padding: 60px 20px;
+        }
+
+        .hobbies-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO SECTION -->
+    <div class="container">
+      <section class="hero-bio">
+        <div class="hero-content">
+          <div class="bio-image">
+            <img src="MIMI.jpg" alt="Pretty Mae Otero" />
+          </div>
+          <div class="bio-text">
+            <h2 style="font-weight: 800">Hi! I'm Pretty Mae</h2>
+            <p style="font-weight: 600; line-height: 1.8">
+              I'm an
+              <span
+                class="highlight-text"
+                style="font-weight: 800; color: #e8b4c8"
+                >IT student</span
+              >
+              with a passion for
+              <span
+                class="highlight-text"
+                style="font-weight: 800; color: #e8b4c8"
+                >web development</span
+              >
+              and creating
+              <strong>beautiful, functional digital experiences</strong>. I love
+              combining my
+              <strong>technical skills with creative design</strong> to build
+              websites that are not only functional but also
+              <strong>visually appealing</strong>.
+            </p>
+            <p style="font-weight: 500; line-height: 1.8">
+              Beyond coding, I'm driven by <strong>curiosity</strong> and the
+              desire to continuously learn new technologies. I believe in the
+              power of
+              <strong
+                >clean code, responsive design, and user-centered
+                development</strong
+              >.
+            </p>
+          </div>
         </div>
-
-        <div class="column">
-            <h3>Hobbies</h3>
-            <ul>
-                <li>Watching movies</li>
-                <li>Playing video games</li>
-                <li>Cleaning & organizing</li>
-            </ul>
-        </div>
+      </section>
     </div>
 
+    <!-- EDUCATION SECTION -->
+    <section class="bio-section">
+      <div class="container">
+        <h2 style="font-weight: 800; letter-spacing: -0.5px">
+          Education & Background
+        </h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="education-card">
+              <div style="display: flex; align-items: flex-start">
+                <div class="education-icon">
+                  <i class="bi bi-book"></i>
+                </div>
+                <div style="flex: 1">
+                  <h4>Bachelor of Science in Information Technology</h4>
+                  <p class="subtitle">University of Mindanao</p>
+                  <p><strong>Expected Graduation:</strong> 2029</p>
+                  <p>
+                    Currently pursuing my degree with focus on web development,
+                    programming fundamentals, and system design. Actively
+                    learning modern technologies and best practices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="education-card">
+              <div style="display: flex; align-items: flex-start">
+                <div class="education-icon">
+                  <i class="bi bi-star"></i>
+                </div>
+                <div style="flex: 1">
+                  <h4>Self-Directed Learning</h4>
+                  <p class="subtitle">Continuous Development</p>
+                  <p>
+                    Beyond my formal education, I'm committed to self-learning
+                    through online courses, tutorials, and real-world projects.
+                  </p>
+                  <p>
+                    <strong>Skills Focus:</strong> HTML5, CSS3, Bootstrap,
+                    JavaScript, Responsive Design
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</body>
+    <!-- HOBBIES & INTERESTS SECTION -->
+    <section class="bio-section">
+      <div class="container">
+        <h2 style="font-weight: 800; letter-spacing: -0.5px">
+          My Interests & Hobbies
+        </h2>
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <i class="bi bi-palette-fill hobby-icon"></i>
+            <h4>Drawing</h4>
+            <p>
+              I love expressing creativity through art. Drawing helps me relax
+              and visualize design concepts before bringing them to code.
+            </p>
+          </div>
+          <div class="hobby-card">
+            <i class="bi bi-book-fill hobby-icon"></i>
+            <h4>Reading</h4>
+            <p>
+              From tech blogs to novels, reading keeps me informed and inspired.
+              I enjoy learning new perspectives and ideas.
+            </p>
+          </div>
+          <div class="hobby-card">
+            <i class="bi bi-music-note-beamed hobby-icon"></i>
+            <h4>Music</h4>
+            <p>
+              Music is my constant companion. Whether coding or relaxing, the
+              right playlist always sets the perfect mood.
+            </p>
+          </div>
+          <div class="hobby-card">
+            <i class="bi bi-film hobby-icon"></i>
+            <h4>Movies & Series</h4>
+            <p>
+              I'm a fan of storytelling. Movies and series inspire me creatively
+              and help me appreciate good cinematography.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="bio-section">
+      <div class="container">
+        <h2 style="font-weight: 800; letter-spacing: -0.5px">My Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="year">2022</div>
+              <h4>Started IT Journey</h4>
+              <p>
+                Began my Bachelor's degree in Information Technology,
+                discovering my passion for web development.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="year">2023</div>
+              <h4>First Web Projects</h4>
+              <p>
+                Started building my first websites using HTML, CSS, and
+                Bootstrap, diving deeper into web design.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="year">2024</div>
+              <h4>JavaScript Mastery</h4>
+              <p>
+                Expanded my skills to include JavaScript, creating interactive
+                and dynamic web experiences.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="year">2026</div>
+              <h4>Portfolio Building</h4>
+              <p>
+                Focused on creating polished projects and building a strong
+                portfolio to showcase my work and skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="bio-section">
+      <div class="container">
+        <h2 style="font-weight: 800; letter-spacing: -0.5px">
+          Goals & Aspirations
+        </h2>
+        <div class="goals-container">
+          <div class="goal-item">
+            <h4>
+              <i class="bi bi-target"></i>
+              Master Full-Stack Development
+            </h4>
+            <p>
+              To expand my skills beyond frontend and become proficient in
+              backend technologies to build complete web applications.
+            </p>
+          </div>
+          <div class="goal-item">
+            <h4>
+              <i class="bi bi-briefcase"></i>
+              Secure a Professional Role
+            </h4>
+            <p>
+              To land a position as a junior web developer where I can apply my
+              skills, learn from experienced developers, and grow
+              professionally.
+            </p>
+          </div>
+          <div class="goal-item">
+            <h4>
+              <i class="bi bi-lightbulb"></i>
+              Create Impactful Solutions
+            </h4>
+            <p>
+              To build web applications that solve real problems and provide
+              value to users, combining functionality with beautiful design.
+            </p>
+          </div>
+          <div class="goal-item">
+            <h4>
+              <i class="bi bi-people"></i>
+              Contribute to the Community
+            </h4>
+            <p>
+              To share my knowledge, help other aspiring developers, and
+              contribute to open-source projects that benefit the development
+              community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="bio-footer">
+      <h3 style="margin-bottom: 30px">Ready to work together?</h3>
+      <a href="portfolio.html" class="back-button">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </body>
 </html>
